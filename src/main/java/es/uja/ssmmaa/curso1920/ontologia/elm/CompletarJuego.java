@@ -7,7 +7,6 @@ package es.uja.ssmmaa.curso1920.ontologia.elm;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.Modo;
 import jade.content.AgentAction;
-import jade.content.Concept;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
@@ -18,21 +17,21 @@ import jade.util.leap.List;
  */
 public class CompletarJuego implements AgentAction {
     private Juego juego;
-    private Concept tipoJuego;
     private Modo modo;
+    private InfoJuego infoJuego;
     private List listaJugadores;
 
     public CompletarJuego() {
         this.juego = null;
-        this.tipoJuego = null;
         this.modo = null;
+        this.infoJuego = null;
         this.listaJugadores = null;
     }
 
-    public CompletarJuego(Juego juego, Concept tipoJuego, Modo modo, List listaJugadores) {
+    public CompletarJuego(Juego juego, Modo modo, InfoJuego infoJuego, List listaJugadores) {
         this.juego = juego;
-        this.tipoJuego = tipoJuego;
         this.modo = modo;
+        this.infoJuego = infoJuego;
         this.listaJugadores = listaJugadores;
     }
     
@@ -44,16 +43,7 @@ public class CompletarJuego implements AgentAction {
     public void setJuego(Juego juego) {
         this.juego = juego;
     }
-
-    @Slot(mandatory=true)
-    public Concept getTipoJuego() {
-        return tipoJuego;
-    }
-
-    public void setTipoJuego(Concept tipoJuego) {
-        this.tipoJuego = tipoJuego;
-    }
-
+    
     @Slot(mandatory=true)
     public Modo getModo() {
         return modo;
@@ -63,6 +53,14 @@ public class CompletarJuego implements AgentAction {
         this.modo = modo;
     }
 
+    @Slot(mandatory=true)
+    public InfoJuego getAgenteJuego() {
+        return infoJuego;
+    }
+
+    public void setAgenteJuego(InfoJuego infoJuego) {
+        this.infoJuego = infoJuego;
+    }
     
     @AggregateSlot(cardMin=2, type=Jugador.class)
     public List getListaJugadores() {

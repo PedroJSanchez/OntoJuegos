@@ -3,27 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uja.ssmmaa.curso1920.ontologia.elm;
+package es.uja.ssmmaa.curso1920.ontologia.Quatro;
 
-import jade.content.AgentAction;
+import es.uja.ssmmaa.curso1920.ontologia.elm.Partida;
+import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
 /**
  *
  * @author pedroj
  */
-public class PedirMovimiento implements AgentAction {
+public class FichaEntregada implements Predicate {
     private Partida partida;
-    private Jugador jugadorActivo;
+    private Ficha ficha;
 
-    public PedirMovimiento() {
+    public FichaEntregada() {
         this.partida = null;
-        this.jugadorActivo = null;
+        this.ficha = null;
     }
 
-    public PedirMovimiento(Partida partida, Jugador jugadorActivo) {
+    public FichaEntregada(Partida partida, Ficha ficha) {
         this.partida = partida;
-        this.jugadorActivo = jugadorActivo;
+        this.ficha = ficha;
     }
 
     @Slot(mandatory=true)
@@ -36,16 +37,16 @@ public class PedirMovimiento implements AgentAction {
     }
 
     @Slot(mandatory=true)
-    public Jugador getJugadorActivo() {
-        return jugadorActivo;
+    public Ficha getFicha() {
+        return ficha;
     }
 
-    public void setJugadorActivo(Jugador jugadorActivo) {
-        this.jugadorActivo = jugadorActivo;
+    public void setFicha(Ficha ficha) {
+        this.ficha = ficha;
     }
 
     @Override
     public String toString() {
-        return "PedirMovimiento{" + "partida=" + partida + ", jugadorActivo=" + jugadorActivo + '}';
+        return "FichaEntregada{" + "partida=" + partida + ", ficha=" + ficha + '}';
     }
 }

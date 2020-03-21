@@ -5,25 +5,24 @@
  */
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import jade.content.AgentAction;
 import jade.content.onto.annotations.Slot;
 
 /**
  *
  * @author pedroj
  */
-public class PedirMovimiento implements AgentAction {
+public class ResultadoPartida extends SubInform {
     private Partida partida;
-    private Jugador jugadorActivo;
+    private Jugador ganador;
 
-    public PedirMovimiento() {
+    public ResultadoPartida() {
         this.partida = null;
-        this.jugadorActivo = null;
+        this.ganador = null;
     }
 
-    public PedirMovimiento(Partida partida, Jugador jugadorActivo) {
+    public ResultadoPartida(Partida partida, Jugador ganador) {
         this.partida = partida;
-        this.jugadorActivo = jugadorActivo;
+        this.ganador = ganador;
     }
 
     @Slot(mandatory=true)
@@ -35,17 +34,24 @@ public class PedirMovimiento implements AgentAction {
         this.partida = partida;
     }
 
-    @Slot(mandatory=true)
-    public Jugador getJugadorActivo() {
-        return jugadorActivo;
+    @Slot(mandatory=false)
+    public Jugador getGanador() {
+        return ganador;
     }
 
-    public void setJugadorActivo(Jugador jugadorActivo) {
-        this.jugadorActivo = jugadorActivo;
+    public void setGanador(Jugador ganador) {
+        this.ganador = ganador;
     }
 
     @Override
     public String toString() {
-        return "PedirMovimiento{" + "partida=" + partida + ", jugadorActivo=" + jugadorActivo + '}';
+        String result = "Resultado{" + "partida= " + partida;
+        
+        if( ganador == null )
+            result += " JUEGO EMPATADO }";
+        else
+            result += ", ganador=" + ganador + '}';
+                    
+        return  result;
     }
 }

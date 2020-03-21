@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uja.ssmmaa.curso1920.ontologia.tresEnRaya;
+package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import es.uja.ssmmaa.curso1920.ontologia.elm.Posicion;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
@@ -14,7 +13,7 @@ import jade.content.onto.annotations.Slot;
  * @author pedroj
  */
 public class Movimiento implements Concept {
-    private Ficha ficha;
+    private FichaJuego ficha;
     private Posicion posicion;
 
     public Movimiento() {
@@ -22,17 +21,17 @@ public class Movimiento implements Concept {
         this.posicion = null;
     }
 
-    public Movimiento(Ficha ficha, Posicion posicion) {
+    public Movimiento(FichaJuego ficha, Posicion posicion) {
         this.ficha = ficha;
         this.posicion = posicion;
     }
 
     @Slot(mandatory=true)
-    public Ficha getFicha() {
+    public FichaJuego getFicha() {
         return ficha;
     }
 
-    public void setFicha(Ficha ficha) {
+    public void setFicha(FichaJuego ficha) {
         this.ficha = ficha;
     }
 

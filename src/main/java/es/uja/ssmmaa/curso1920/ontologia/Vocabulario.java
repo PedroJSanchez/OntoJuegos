@@ -43,26 +43,30 @@ public interface Vocabulario {
     // Elementos para los juegos
     public static enum Motivo { 
         JUEGOS_ACTIVOS_SUPERADOS, PARTICIPACION_EN_JUEGOS_SUPERADA, 
-        TIPO_JUEGO_NO_IMPLEMENTADO, DEMASIADOS_JUEGOS_SIN_COMPLETAR
+        TIPO_JUEGO_NO_IMPLEMENTADO, DEMASIADOS_JUEGOS_SIN_COMPLETAR, SUPERADO_LIMITE_PARTIDAS,
+        SUBSCRIPCION_ACEPTADA, ERROR_SUBSCRIPCION, ERROR_CANCELACION, ONTOLOGIA_DESCONOCIDA
     }
     
     public static enum Incidencia {
-        CANCELACION, ERROR_AGENTE, ERROR_MENSAJE_INCORRECTO, ERROR_CONTENIDO_MENSAJE
+        CANCELADO, JUGADORES_INSUFICIENTES, 
+        ERROR_AGENTE, ERROR_MENSAJE_INCORRECTO, ERROR_CONTENIDO_MENSAJE,
     }
     
     public static enum Estado {
-        GANADOR, ABANDONO, SEGUIR_JUGANDO, FIN_PARTIDA
+        GANADOR, ABANDONO, SEGUIR_JUGANDO, FIN_PARTIDA, JUGADOR_NO_ACTIVO
     }
     
     public static enum Modo { UNICO, ELIMINATORIA, TORNEO }
-    public static enum Color { BLANCO, NEGRO }
-    public static enum Forma { REDONDO, CUADRADO }
-    public static enum Relleno { SOLIDO, HUECO }
-    public static enum Altura { BAJO, ALTO }
+    public static enum Color { BLANCO, NEGRO, AZUL, ROJO, NULO }
+    public static enum Forma { REDONDO, CUADRADO, NULO }
+    public static enum Relleno { SOLIDO, HUECO, NULO }
+    public static enum Altura { BAJO, ALTO, NULO }
     public static enum Orientacion { HORIZONTAL, VERTICAL }
+    public static enum Version { NORMAL, AVANZADA }
     public static final int POSICION_NULA = -1;
-    public static final int FICHAS_QUATRO = 16;
+    public static final int QUATRO_NUM_FICHAS = 16;
     public static final int MUROS_QUORIDOR = 20;
+    public static final int QUORIDOR_CENTRO = 5; // Posición central de partida
     
     public static enum Puntuacion {
         VICTORIA(3), EMPATE(1), DERROTA(0);
@@ -84,13 +88,13 @@ public interface Vocabulario {
         
         switch ( tipoJuego ) {
             case TRES_EN_RAYA:
-                // resultado = OntoTresEnRaya.getInstance();
+                resultado = OntoTresEnRaya.getInstance();
                 break;
             case QUORIDOR:
-                //resultado = OntoQuoridor.getInstance();
+                resultado = OntoQuoridor.getInstance();
                 break;
             case QUATRO:
-                //resultado = OntoQuatro.getInstance();
+                resultado = OntoQuatro.getInstance();
                 break;
             default:
                 resultado = OntoJuegoTablero.getInstance();

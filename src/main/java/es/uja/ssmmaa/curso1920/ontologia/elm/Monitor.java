@@ -5,7 +5,6 @@
  */
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 import jade.core.AID;
 
@@ -13,7 +12,7 @@ import jade.core.AID;
  *
  * @author pedroj
  */
-public class Monitor implements Concept {
+public class Monitor extends AgenteJuego {
     private String nombre;
     private AID agenteMonitor;
 

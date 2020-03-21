@@ -5,7 +5,6 @@
  */
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 import jade.core.AID;
 
@@ -13,10 +12,9 @@ import jade.core.AID;
  *
  * @author pedroj
  */
-public class Jugador implements Concept {
+public class Jugador extends AgenteJuego {
     private String nombre;
     private AID agenteJugador;
-   
 
     public Jugador() {
         this.nombre = null;
