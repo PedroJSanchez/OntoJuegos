@@ -5,25 +5,25 @@
  */
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import jade.content.Predicate;
+import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
 /**
  *
  * @author pedroj
  */
-public class JuegoAceptado implements Predicate {
+public class Partida implements Concept {
     private Juego juego;
-    private AgenteJuego agenteJuego;
+    private int ronda;
 
-    public JuegoAceptado() {
+    public Partida() {
         this.juego = null;
-        this.agenteJuego = null;
+        this.ronda = 0;
     }
 
-    public JuegoAceptado(Juego juego, AgenteJuego agenteJuego) {
+    public Partida(Juego juego, int ronda) {
         this.juego = juego;
-        this.agenteJuego = agenteJuego;
+        this.ronda = ronda;
     }
 
     @Slot(mandatory=true)
@@ -36,16 +36,16 @@ public class JuegoAceptado implements Predicate {
     }
 
     @Slot(mandatory=true)
-    public AgenteJuego getAgenteJuego() {
-        return agenteJuego;
+    public int getRonda() {
+        return ronda;
     }
 
-    public void setAgenteJuego(AgenteJuego agenteJuego) {
-        this.agenteJuego = agenteJuego;
+    public void setRonda(int ronda) {
+        this.ronda = ronda;
     }
 
     @Override
     public String toString() {
-        return "JuegoAceptado{" + "juego=" + juego + ", agenteJuego=" + agenteJuego + '}';
-    } 
+        return "Partida(" + ronda + ") del juego " + juego;
+    }   
 }

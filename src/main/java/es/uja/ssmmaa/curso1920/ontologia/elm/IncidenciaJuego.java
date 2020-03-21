@@ -6,14 +6,13 @@
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.Incidencia;
-import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
 /**
  *
  * @author pedroj
  */
-public class IncidenciaJuego implements Predicate {
+public class IncidenciaJuego extends SubInform {
     private Juego juego;
     private Incidencia detalle;
 

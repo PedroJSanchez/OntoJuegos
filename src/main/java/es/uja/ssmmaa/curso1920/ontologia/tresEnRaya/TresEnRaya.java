@@ -6,14 +6,14 @@
 package es.uja.ssmmaa.curso1920.ontologia.tresEnRaya;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.TipoJuego;
+import es.uja.ssmmaa.curso1920.ontologia.elm.InfoJuego;
 import es.uja.ssmmaa.curso1920.ontologia.elm.Tablero;
-import jade.content.Concept;
 
 /**
  *
  * @author pedroj
  */
-public class TresEnRaya implements Concept {
+public class TresEnRaya extends InfoJuego {
     private final Tablero tablero;
 
     public TresEnRaya() {

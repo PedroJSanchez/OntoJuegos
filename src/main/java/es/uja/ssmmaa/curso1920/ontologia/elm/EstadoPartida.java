@@ -5,25 +5,26 @@
  */
 package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import jade.content.AgentAction;
+import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.Estado;
+import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
 /**
  *
  * @author pedroj
  */
-public class PedirMovimiento implements AgentAction {
+public class EstadoPartida implements Predicate {
     private Partida partida;
-    private Jugador jugadorActivo;
+    private Estado estadoPartida;
 
-    public PedirMovimiento() {
+    public EstadoPartida() {
         this.partida = null;
-        this.jugadorActivo = null;
+        this.estadoPartida = null;
     }
 
-    public PedirMovimiento(Partida partida, Jugador jugadorActivo) {
+    public EstadoPartida(Partida partida, Estado estadoPartida) {
         this.partida = partida;
-        this.jugadorActivo = jugadorActivo;
+        this.estadoPartida = estadoPartida;
     }
 
     @Slot(mandatory=true)
@@ -36,16 +37,16 @@ public class PedirMovimiento implements AgentAction {
     }
 
     @Slot(mandatory=true)
-    public Jugador getJugadorActivo() {
-        return jugadorActivo;
+    public Estado getEstadoPartida() {
+        return estadoPartida;
     }
 
-    public void setJugadorActivo(Jugador jugadorActivo) {
-        this.jugadorActivo = jugadorActivo;
+    public void setEstadoPartida(Estado estadoPartida) {
+        this.estadoPartida = estadoPartida;
     }
 
     @Override
     public String toString() {
-        return "PedirMovimiento{" + "partida=" + partida + ", jugadorActivo=" + jugadorActivo + '}';
+        return "EstadoJuego{" + "partida=" + partida + ", estadoPartida=" + estadoPartida + '}';
     }
 }

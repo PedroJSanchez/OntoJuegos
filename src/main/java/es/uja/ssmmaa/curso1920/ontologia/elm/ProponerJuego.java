@@ -7,7 +7,6 @@ package es.uja.ssmmaa.curso1920.ontologia.elm;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.Modo;
 import jade.content.AgentAction;
-import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
 /**
@@ -17,17 +16,17 @@ import jade.content.onto.annotations.Slot;
 public class ProponerJuego implements AgentAction {
     private Juego juego;
     private Modo modo;
-    private Concept tipoJuego;
+    private InfoJuego infoJuego;
 
     public ProponerJuego() {
         this.juego = null;
         this.modo = null;
-        this.tipoJuego = null;
+        this.infoJuego = null;
     }
 
-    public ProponerJuego(Juego juego, Concept tipoJuego) {
+    public ProponerJuego(Juego juego, InfoJuego infoJuego) {
         this.juego = juego;
-        this.tipoJuego = tipoJuego;
+        this.infoJuego = infoJuego;
     }
 
     @Slot(mandatory = true)
@@ -49,16 +48,16 @@ public class ProponerJuego implements AgentAction {
     }
 
     @Slot(mandatory=true)
-    public Concept getTipoJuego() {
-        return tipoJuego;
+    public InfoJuego getInfoJuego() {
+        return infoJuego;
     }
 
-    public void setTipoJuego(Concept tipoJuego) {
-        this.tipoJuego = tipoJuego;
+    public void setInfoJuego(InfoJuego infoJuego) {
+        this.infoJuego = infoJuego;
     }
 
     @Override
     public String toString() {
-        return "ProponerJuego{" + "juego=" + juego + ", modo=" + modo + ", tipoJuego=" + tipoJuego + '}';
+        return "ProponerJuego{" + "juego=" + juego + ", modo=" + modo + ", infoJuego=" + infoJuego + '}';
     }
 }

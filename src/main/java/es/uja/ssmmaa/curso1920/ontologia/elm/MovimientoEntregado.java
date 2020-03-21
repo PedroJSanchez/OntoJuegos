@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uja.ssmmaa.curso1920.ontologia.tresEnRaya;
+package es.uja.ssmmaa.curso1920.ontologia.elm;
 
-import es.uja.ssmmaa.curso1920.ontologia.elm.Juego;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
@@ -14,26 +13,26 @@ import jade.content.onto.annotations.Slot;
  * @author pedroj
  */
 public class MovimientoEntregado implements Predicate {
-    private Juego juego;
+    private Partida partida;
     private Movimiento movimiento;
 
     public MovimientoEntregado() {
-        this.juego = null;
+        this.partida = null;
         this.movimiento = null;
     }
 
-    public MovimientoEntregado(Juego juego, Movimiento movimiento) {
-        this.juego = juego;
+    public MovimientoEntregado(Partida partida, Movimiento movimiento) {
+        this.partida = partida;
         this.movimiento = movimiento;
     }
 
     @Slot(mandatory=true)
-    public Juego getJuego() {
-        return juego;
+    public Partida getPartida() {
+        return partida;
     }
 
-    public void setJuego(Juego juego) {
-        this.juego = juego;
+    public void setPartida(Partida partida) {
+        this.partida = partida;
     }
 
     @Slot(mandatory=true)
@@ -47,6 +46,6 @@ public class MovimientoEntregado implements Predicate {
 
     @Override
     public String toString() {
-        return "MovimientoEntregado{" + "juego=" + juego + ", movimiento=" + movimiento + '}';
+        return "MovimientoEntregado{" + "partida=" + partida + ", movimiento=" + movimiento + '}';
     }
 }
