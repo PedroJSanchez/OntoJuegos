@@ -20,7 +20,7 @@ En este curso se van ha diseñar ontologías para los siguientes juegos:
  2. [Quatro!](https://drive.google.com/file/d/0B5KQ_9DlCmReakFKQ3hPZV85Vnc/view?usp=sharing). 
  3. [Quoridor](https://drive.google.com/file/d/0B5KQ_9DlCmRec3hYVXN1Y2xnVFE/view?usp=sharing).
 
-Como el diseño de las ontologías estará enfocado en resolver las necesidades de comunicación entre los agentes se incluirán los diagramas UML para los diferentes protocolos de comunicación entre **agentes-FIPA** las resuelven.
+Como el diseño de las ontologías estará enfocado en resolver las necesidades de comunicación entre los agentes se incluirán los diagramas UML para los diferentes protocolos de comunicación entre **agentes-FIPA** que las resuelven.
 
 ## 1 Análisis de la ontología
 
