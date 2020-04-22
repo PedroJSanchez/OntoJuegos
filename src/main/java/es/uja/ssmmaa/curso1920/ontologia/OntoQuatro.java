@@ -38,7 +38,7 @@ public class OntoQuatro extends BeanOntology {
      */
     private OntoQuatro() throws BeanOntologyException {
 	
-        super(ONTOLOGY_NAME, OntoQuatro.getInstance());
+        super(ONTOLOGY_NAME, OntoJuegoTablero.getInstance());
         
         add("es.uja.ssmmaa.curso1920.ontologia.Quatro");
     }

@@ -38,7 +38,7 @@ public class OntoQuoridor extends BeanOntology {
      */
     private OntoQuoridor() throws BeanOntologyException {
 	
-        super(ONTOLOGY_NAME, OntoQuoridor.getInstance());
+        super(ONTOLOGY_NAME, OntoJuegoTablero.getInstance());
         
         add("es.uja.ssmmaa.curso1920.ontologia.Quoridor");
     }

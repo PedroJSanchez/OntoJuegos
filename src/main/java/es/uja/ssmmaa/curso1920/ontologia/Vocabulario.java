@@ -83,7 +83,7 @@ public interface Vocabulario {
     }
     
     // Métodos
-    public static Ontology getOntologia( TipoJuego tipoJuego ) throws BeanOntologyException {
+    public static Ontology getOntology( TipoJuego tipoJuego ) throws BeanOntologyException {
         Ontology resultado = null;
         
         switch ( tipoJuego ) {
