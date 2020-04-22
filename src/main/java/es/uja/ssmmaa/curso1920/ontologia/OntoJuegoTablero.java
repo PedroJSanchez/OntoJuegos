@@ -40,6 +40,6 @@ public class OntoJuegoTablero  extends BeanOntology {
 	
         super(ONTOLOGY_NAME);
         
-        add("juegosTablero.dominio.elementos");
+        add("es.uja.ssmmaa.curso1920.ontologia.juegoTablero");
     }
 }

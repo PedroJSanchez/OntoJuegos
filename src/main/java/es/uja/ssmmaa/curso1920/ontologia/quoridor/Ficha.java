@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uja.ssmmaa.curso1920.ontologia.tresEnRaya;
+package es.uja.ssmmaa.curso1920.ontologia.quoridor;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.Color;
 import es.uja.ssmmaa.curso1920.ontologia.juegoTablero.FichaJuego;

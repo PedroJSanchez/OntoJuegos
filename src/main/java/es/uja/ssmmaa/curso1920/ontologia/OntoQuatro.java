@@ -40,6 +40,6 @@ public class OntoQuatro extends BeanOntology {
 	
         super(ONTOLOGY_NAME, OntoJuegoTablero.getInstance());
         
-        add("es.uja.ssmmaa.curso1920.ontologia.Quatro");
+        add("es.uja.ssmmaa.curso1920.ontologia.quatro");
     }
 }

@@ -6,8 +6,8 @@
 package es.uja.ssmmaa.curso1920.ontologia.tresEnRaya;
 
 import es.uja.ssmmaa.curso1920.ontologia.Vocabulario.TipoJuego;
-import es.uja.ssmmaa.curso1920.ontologia.elm.InfoJuego;
-import es.uja.ssmmaa.curso1920.ontologia.elm.Tablero;
+import es.uja.ssmmaa.curso1920.ontologia.juegoTablero.InfoJuego;
+import es.uja.ssmmaa.curso1920.ontologia.juegoTablero.Tablero;
 
 /**
  *

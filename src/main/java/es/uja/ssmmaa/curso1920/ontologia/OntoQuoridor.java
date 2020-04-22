@@ -40,6 +40,6 @@ public class OntoQuoridor extends BeanOntology {
 	
         super(ONTOLOGY_NAME, OntoJuegoTablero.getInstance());
         
-        add("es.uja.ssmmaa.curso1920.ontologia.Quoridor");
+        add("es.uja.ssmmaa.curso1920.ontologia.quoridor");
     }
 }
