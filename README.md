@@ -301,10 +301,10 @@ Para la implementación de la ontología se han agrupado los diferentes elemento
 Para esto se crea una estructura de paquetes donde se incluyen las clases que representan a las diferentes ontologías como los elementos que las componen:
 
 - `es.uja.ssmmaa.curso1920.ontologia` : Se incluyen las clases que representan las ontologías descritas y una interface que incluye el vocabulario que utilizan.
-	- `es.uja.ssmmaa.curso1920.ontologia.elm` : Contiene los elementos de `OntoJuegoTablero`.
+	- `es.uja.ssmmaa.curso1920.ontologia.juegoTablero` : Contiene los elementos de `OntoJuegoTablero`.
 	- `es.uja.ssmmaa.curso1920.ontologia.tresEnRaya` : Contiene los elementos de `OntoTresEnRaya`.
-	- `es.uja.ssmmaa.curso1920.ontologia.Quoridor` : Contiene los elementos de `OntoQuoridor`.
-	- `es.uja.ssmmaa.curso1920.ontologia.Quatro` : Contiene los elementos de `OntoQuatro`.
+	- `es.uja.ssmmaa.curso1920.ontologia.quoridor` : Contiene los elementos de `OntoQuoridor`.
+	- `es.uja.ssmmaa.curso1920.ontologia.quatro` : Contiene los elementos de `OntoQuatro`.
 
 En el repositorio del proyecto se puede repasar el código necesario para la implementación de los diferentes elementos de las ontologías.
 
@@ -329,7 +329,7 @@ public static enum Puntuacion {
 Este elemento incluye, además del valor que representa un elemento del vocabulario, el valor para el cálculo de la clasificación de un juego.
 
 ```java
-public static Ontology getOntologia( TipoJuego tipoJuego ) throws BeanOntologyException {
+public static Ontology getOntology( TipoJuego tipoJuego ) throws BeanOntologyException {
     Ontology resultado = null;
         
     switch ( tipoJuego ) {
@@ -372,7 +372,7 @@ Dependencias asociadas a la biblioteca de la ontología.
 <dependency>
     <groupId>com.github.PedroJSanchez</groupId>
 	<artifactId>OntoJuegoTablero</artifactId>
-	<version>master-SNAPSHOT</version>
+	<version>1.2</version>
 </dependency>
 ```
 
