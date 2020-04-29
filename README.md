@@ -140,6 +140,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 	- `Partida` : datos de la partida que se ha completado.
 		- `Juego` : juego al que corresponde la partida.
 		- `ronda` : indica la ronda de la partida dentro del juego.
+		- `maxRondas` : indica el máximo de rondas que tendrá el juego.
 	- `ListaJugadores` : es una colección de elementos `Jugador`, y al menos deben ser dos, que participarán en la partida. Este atributo contempla la extensión de jugadores que disputan la partida, es decir, que el número de jugadores sea mayor que 2.
 
 ###  1.6 ¿Cómo completar un turno de una partida? ¿Cómo completar la partida?
