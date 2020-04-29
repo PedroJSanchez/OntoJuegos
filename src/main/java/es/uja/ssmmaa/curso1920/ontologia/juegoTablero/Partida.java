@@ -15,15 +15,18 @@ import jade.content.onto.annotations.Slot;
 public class Partida implements Concept {
     private Juego juego;
     private int ronda;
+    private int maxRondas;
 
     public Partida() {
         this.juego = null;
         this.ronda = 0;
+        this.maxRondas = 0;
     }
 
-    public Partida(Juego juego, int ronda) {
+    public Partida(Juego juego, int ronda, int maxRondas) {
         this.juego = juego;
         this.ronda = ronda;
+        this.maxRondas = maxRondas;
     }
 
     @Slot(mandatory=true)
@@ -44,8 +47,18 @@ public class Partida implements Concept {
         this.ronda = ronda;
     }
 
+    @Slot(mandatory=true)
+    public int getMaxRondas() {
+        return maxRondas;
+    }
+
+    public void setMaxRondas(int maxRondas) {
+        this.maxRondas = maxRondas;
+    }
+
     @Override
     public String toString() {
-        return "Partida(" + ronda + ") del juego " + juego;
-    }   
+        return "Partida{" + "juego=" + juego + ", ronda=" + ronda + 
+               ", maxRondas=" + maxRondas + '}';
+    }  
 }
