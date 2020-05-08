@@ -287,6 +287,9 @@ Se utiliza este protocolo para:
 No tendrán una representación en la implementación de la ontología pero sí debemos tenerlos en cuenta para una correcta utilización de la misma:
 
 - Origen de coordenadas para definir las posiciones en el tablero. La `Posicion(0,0)` estará localizada en la esquina superior izquierda del tablero de juego.
+- Cuando se generan las posiciones del tablero:
+	- La coordenada `X` : representa la fila del tablero.
+	- La coordenada `Y` : representa la columna del tablero.
 - Para el juego Quoridor:
 	- Cuando un jugador posiciona un `Muro` en el tablero su posición hace referencia siempre a la casilla izquierda, si su orientación es `HORIZONTAL`, o a la casilla inferior, si su orientación es `VERTICAL`.  Un `Muro` bloque dos casillas del tablero.
 
