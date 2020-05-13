@@ -376,7 +376,7 @@ Dependencias asociadas a la biblioteca de la ontología.
 <dependency>
     <groupId>com.github.PedroJSanchez</groupId>
 	<artifactId>OntoJuegoTablero</artifactId>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 </dependency>
 ```
 
