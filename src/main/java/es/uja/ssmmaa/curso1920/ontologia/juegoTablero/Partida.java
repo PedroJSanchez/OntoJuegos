@@ -13,22 +13,41 @@ import jade.content.onto.annotations.Slot;
  * @author pedroj
  */
 public class Partida implements Concept {
+    private String idPartida;
     private Juego juego;
     private int ronda;
     private int maxRondas;
 
     public Partida() {
+        this.idPartida = null;
         this.juego = null;
         this.ronda = 0;
         this.maxRondas = 0;
     }
-
-    public Partida(Juego juego, int ronda, int maxRondas) {
+    
+    public Partida(String idPartida) {
+        this.idPartida = idPartida;
+        this.juego = null;
+        this.ronda = 0;
+        this.maxRondas = 0;
+    }
+    
+    public Partida(String idPartida, Juego juego, int ronda, int maxRondas) {
+        this.idPartida = idPartida;
         this.juego = juego;
         this.ronda = ronda;
         this.maxRondas = maxRondas;
     }
 
+    @Slot(mandatory=true)
+    public String getIdPartida() {
+        return idPartida;
+    }
+
+    public void setIdPartida(String idPartida) {
+        this.idPartida = idPartida;
+    }
+    
     @Slot(mandatory=true)
     public Juego getJuego() {
         return juego;
@@ -58,7 +77,7 @@ public class Partida implements Concept {
 
     @Override
     public String toString() {
-        return "Partida{" + "juego=" + juego + ", ronda=" + ronda + 
-               ", maxRondas=" + maxRondas + '}';
-    }  
+        return "Partida{" + "idPartida=" + idPartida + ", juego=" + juego + 
+                ", ronda=" + ronda + ", maxRondas=" + maxRondas + '}';
+    }     
 }
