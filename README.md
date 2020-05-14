@@ -138,6 +138,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 
 - `CompletarPartida` : Contiene la información necesaria de la partida que se tiene que jugar.
 	- `Partida` : datos de la partida que se ha completado.
+		- `idPartida`: identifica a la partida que corresponde a un mismo juego.
 		- `Juego` : juego al que corresponde la partida.
 		- `ronda` : indica la ronda de la partida dentro del juego.
 		- `maxRondas` : indica el máximo de rondas que tendrá el juego.
