@@ -220,7 +220,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 
 - `ResultadoPartida` : Representa el resultado de la partida.
 	- `Partida` : datos de la partida que se ha completado.
-	- `Jugador` : es un valor opcional que representa al ganador de la partida. Si no hay ganador indica que la partida ha finalizado en empate.
+	- `Jugador` : representa al ganador de la partida. Si no hay ganador se incluirá un `Jugador`vacío, esto es, `new Jugador("",new AID())`.
 
 ## 2 Diseño de la ontología
 
