@@ -292,7 +292,9 @@ No tendrán una representación en la implementación de la ontología pero sí 
 	- La coordenada `X` : representa la fila del tablero.
 	- La coordenada `Y` : representa la columna del tablero.
 - Para el juego Quoridor:
-	- Cuando un jugador posiciona un `Muro` en el tablero su posición hace referencia siempre a la casilla izquierda, si su orientación es `HORIZONTAL`, o a la casilla inferior, si su orientación es `VERTICAL`.  Un `Muro` bloque dos casillas del tablero.
+	- Al posicionar un `Muro` ocupará dos casillas del tablero que serán las siguientes:
+		- Para una orientación `HORIZONTAL`  y `POSICION (x,y)` : ocupa las casillas `[x,y], [x,y+1]`. Y no está permitido el movimiento entre las casilla `[x,y] <-> [x+1,y]` y entre las casillas `[x,y+1] <-> [x+1,y+1]`. Es decir, entre una casilla y la que se encuentra en la siguiente fila.
+		- Para una orientación `VERTICAL`  y `POSICION (x,y)` : ocupa las casillas `[x,y], [x+1,y]`. Y no está permitido el movimiento entre las casilla `[x,y] <-> [x,y+1]` y entre las casillas `[x+1,y] <-> [x+1,y+1]`. Es decir, entre una casilla y la que se encuentra en la siguiente columna.
 
 ## 3 Implementación de la ontología
 
