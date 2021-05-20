@@ -1,8 +1,8 @@
-[![logo](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
-# Ontologías para el curso 2019-20
-## OntoJuegoTablero
+﻿[![logo](https://www.gnu.org/graphics/gplv3-127x51.png)](https://choosealicense.com/licenses/gpl-3.0/)
+# Ontología 
+## Juegos de Tablero
 
-En este documento se presenta el análisis, diseño e implementación para las ontologías que se utilizarán en el desarrollo de las prácticas para el curso 2019-20 de la asignatura. El diseño de las ontologías estará pensado para resolver las necesidades de comunicación de los agentes implicados en las prácticas. Estos agentes estarán diseñados para responder a los eventos necesarios para:
+En este documento se presenta el análisis, diseño e implementación para las ontologías que se utilizarán en el desarrollo de prácticas para juegos de tablero. El diseño de las ontologías estará pensado para resolver las necesidades de comunicación de los agentes implicados en las prácticas. Estos agentes estarán diseñados para responder a los eventos necesarios para:
 
 - Localizar a los agentes especializados:
 	- Agentes que se encargan de completar los juegos y presentar una representación del juego.
@@ -19,6 +19,8 @@ En este curso se van ha diseñar ontologías para los siguientes juegos:
  1. [Tres en Raya](https://es.wikipedia.org/wiki/Tes_en_l%C3%ADnea#Reglas). 
  2. [Quatro!](https://drive.google.com/file/d/0B5KQ_9DlCmReakFKQ3hPZV85Vnc/view?usp=sharing). 
  3. [Quoridor](https://drive.google.com/file/d/0B5KQ_9DlCmRec3hYVXN1Y2xnVFE/view?usp=sharing).
+ 4. [Encerrado](https://drive.google.com/file/d/1OsRU5rS6e4ZknbkCQFUwt-hJ-9CzTARL/view?usp=sharing).
+ 5. [Tuberías](https://drive.google.com/file/d/1NB0dF0aStT3uFv3ioBV0DkRJgBi7_fFI/view?usp=sharing).
 
 Como el diseño de las ontologías estará enfocado en resolver las necesidades de comunicación entre los agentes se incluirán los diagramas UML para los diferentes protocolos de comunicación entre **agentes-FIPA** que las resuelven.
 
@@ -46,7 +48,7 @@ Para resolver esta pregunta utilizaremos la utilidad del servicio de páginas am
 	- `ORGANIZADOR` : Representa el tipo de servicio que proporcionan los agentes que se encargarán de la organización de las partidas que representan un juego, de alguno de los tipos de la ontología, y computarán el resultado.
 
 - `TipoJuego` : Representa a los tipos de juegos representados en la ontología y que formará parte del nombre del servicio del agente y también forma parte del vocabulario.
-	- [`TRES_EN_RAYA` | `QUORIDOR` | `QUATRO`]
+	- [`TRES_EN_RAYA` | `QUORIDOR` | `QUATRO` | `ENCERRADO` | `TUBERIAS`]
 
 Hay un agente especializado que será el encargado en localizar a todos los agentes especializados. Este agente es `AgenteMonitor` y que deberá conocer todos los elementos de la ontología y será desarrollado por el profesor de la asignatura.
 
@@ -75,6 +77,11 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 			- `Tablero` : dimensiones del tablero para un juego Quatro!
 			- `Version` : [`NORMAL` | `AVANZADA`] valores presentes en el vocabulario para establecer la versión del juego.
 			- `numFichas` : número de fichas que se disponen para el juego.
+		- `Encerrado` : los atibutos necesarios para un juego de Encerrado.
+			- `Tablero` : dimensiones del tablero para un juego de Encerrado.
+			- `numJugadores` : número de jugadores para el juego.
+		- `Tuberias` : los atributos necesarios para un juego de Tuberías.
+			- `Tablero` : dimensiones del tablero para un juego de Tuberías.
 
 - `Justificacion` : Es un elemento del vocabulario y contendrá las posibilidades que dispone el agente para indicar el rechazo para participar en el juego.
 	- `Juego` :  representa el juego en el que no se desea participar.
@@ -142,6 +149,7 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 		- `Juego` : juego al que corresponde la partida.
 		- `ronda` : indica la ronda de la partida dentro del juego.
 		- `maxRondas` : indica el máximo de rondas que tendrá el juego.
+	- `InfoJuego` : es un concepto abstracto que permite representar los datos necesarios de un juego. De esta forma se extender la ontología con nuevos tipos de juegos.
 	- `ListaJugadores` : es una colección de elementos `Jugador`, y al menos deben ser dos, que participarán en la partida. Este atributo contempla la extensión de jugadores que disputan la partida, es decir, que el número de jugadores sea mayor que 2.
 
 ###  1.6 ¿Cómo completar un turno de una partida? ¿Cómo completar la partida?
@@ -183,6 +191,34 @@ En el diagrama se presentan los elementos de la ontología que deberán formar p
 			- `Color` : [`BLANCO` | `NEGRO` | `AZUL` | `ROJO`] una de las posibilidades definidas en el vocabulario de la ontología. Se tiene en cuenta todas las posibilidades del juego.
 		- `Muro` : en este juego es tipo de elemento especial que disponen los jugadores en una cantidad limitada
 			- `Orientacion` : [`HORIZONTAL` | `VERTICAL`] los valores están definidos en el vocabulario de la ontología para las posibilidades de colocación que tenemos en el juego.
+
+
+#### Turno para los juegos: Encerrado y Tuberías
+![][imagen6bis]
+
+En el diagrama se presentan los elementos de la ontología que deberán formar parte del contenido del mensaje que se envía al agente. Los elementos de la ontología tendrán los siguientes atributos:
+
+- `PedirMovimiento` : Información necesaria para completar el turno de juego.
+	- `Partida` : partida a la que corresponde el turno.
+	- `Jugador` : jugador que tiene que realizar el movimiento, **jugador activo**.
+
+- `EstadoPartida` : Información sobre posibles contingencias que pueden ocurrir durante la partida.
+	- `Partida` : partida a la que corresponde el turno.
+	- `Estado` : posibles estados en los que se puede encontrar la partida. Sus valores están definidos en el vocabulario.
+		- [`GANADOR` | `ABANDONO` | `SEGUIR_JUGANDO` | `FIN_PARTIDA` | `JUGADOR_NO_ACTIVO`]
+
+- `MovimientoEntregadoLinea` : Especialización de `MovimientoEntregado` para este juego.
+	- `Orientacion` : [`HORIZONTAL` | `VERTICAL`] los valores están definidos en el vocabulario de la ontología para las posibilidades de colocación de una línea que tenemos en el juego.
+
+- `FichaJuego`
+	- **Tuberias** : para este juego el elemento necesario es:
+		- `Ficha` : ficha para Tuberías
+			- `Jugador` : jugador asociado a la ficha
+			- `Color` : [`BLANCO` | `NEGRO`] una de las posibilidades definidas en el vocabulario de la ontología.
+	- **Encerrado** : para el juego los elementos necesarios son:
+		- `Ficha` : ficha para el Encerrado
+			- `Jugador` : jugador asociado a la ficha
+			- `Color` : [`BLANCO` | `NEGRO` | `AZUL` | `ROJO` | `VERDE`] una de las posibilidades definidas en el vocabulario de la ontología. Se tiene en cuenta todas las posibilidades del juego.
 
 #### Turno para el juego Quoridor!
 
@@ -378,20 +414,21 @@ Dependencias asociadas a la biblioteca de la ontología.
 ```xml
 <dependency>
     <groupId>com.github.PedroJSanchez</groupId>
-	<artifactId>OntoJuegoTablero</artifactId>
-	<version>1.2.2</version>
+	<artifactId>OntoJuegos</artifactId>
+	<version>v1.1</version>
 </dependency>
 ```
 
 
 
-[imagen1]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto1.png
-[imagen2]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto2.png
-[imagen3]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto3.png
-[imagen5]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto5.png
-[imagen6]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto6.png
-[imagen7]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto7.png
-[imagen8]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto4.png
-[imagen9]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto9.png
-[imagen10]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto10.png
-[imagen11]:https://gitlab.com/ssmmaa/curso2019-20/ontojuegotablero/-/raw/master/img/Onto11.png
+[imagen1]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto1.png
+[imagen2]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto2.png
+[imagen3]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto3.png
+[imagen5]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto5.png
+[imagen6]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto6.png
+[imagen6bis]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto6bis.png
+[imagen7]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto7.png
+[imagen8]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto4.png
+[imagen9]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto9.png
+[imagen10]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto10.png
+[imagen11]:https://gitlab.com/ssmmaa/ontojuegos/-/raw/master/img/Onto11.png

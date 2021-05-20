@@ -5,7 +5,6 @@
  */
 package es.uja.ssmmaa.ontologia.juegoTablero;
 
-import jade.content.Predicate;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
@@ -14,7 +13,7 @@ import jade.util.leap.List;
  *
  * @author pedroj
  */
-public class ClasificacionJuego implements Predicate {
+public class ClasificacionJuego extends SubInform {
     private Juego juego;
     private List listaJugadores;
     private List listaPuntuacion;
