@@ -22,16 +22,16 @@ public class Quoridor extends InfoJuego {
     private final int centro;
 
     public Quoridor() {
-        this.tablero = new Tablero(TipoJuego.QUORIDOR.getDimension(),
-                                   TipoJuego.QUORIDOR.getDimension());
+        this.tablero = new Tablero(TipoJuego.QUORIDOR.getFilas(),
+                                   TipoJuego.QUORIDOR.getColumnas());
         this.numJugadores = 2;
         this.numMuros = MUROS_QUORIDOR / this.numJugadores;
         this.centro = QUORIDOR_CENTRO;
     }
     
     public Quoridor(int numJugadores) {
-        this.tablero = new Tablero(TipoJuego.QUORIDOR.getDimension(),
-                                   TipoJuego.QUORIDOR.getDimension());
+        this.tablero = new Tablero(TipoJuego.QUORIDOR.getFilas(),
+                                   TipoJuego.QUORIDOR.getColumnas());
         this.numJugadores = numJugadores;
         this.numMuros = MUROS_QUORIDOR / this.numJugadores;
         this.centro = QUORIDOR_CENTRO;

@@ -18,14 +18,14 @@ public class Encerrado extends InfoJuego {
     private final int numJugadores;
 
     public Encerrado() {
-        this.tablero = new Tablero(TipoJuego.ENCERRADO.getDimension(),
-                                   TipoJuego.ENCERRADO.getDimension());
+        this.tablero = new Tablero(TipoJuego.ENCERRADO.getFilas(),
+                                   TipoJuego.ENCERRADO.getColumnas());
         this.numJugadores = 2;
     }
 
     public Encerrado(int numJugadores) {
-        this.tablero = new Tablero(TipoJuego.ENCERRADO.getDimension(),
-                                   TipoJuego.ENCERRADO.getDimension());
+        this.tablero = new Tablero(TipoJuego.ENCERRADO.getFilas(),
+                                   TipoJuego.ENCERRADO.getColumnas());
         this.numJugadores = numJugadores;
     }
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uja.ssmmaa.ontologia.tresEnRaya;
+package es.uja.ssmmaa.ontologia.conecta4;
 
 import es.uja.ssmmaa.ontologia.Vocabulario.TipoJuego;
 import es.uja.ssmmaa.ontologia.juegoTablero.InfoJuego;
@@ -13,12 +13,16 @@ import es.uja.ssmmaa.ontologia.juegoTablero.Tablero;
  *
  * @author pedroj
  */
-public class TresEnRaya extends InfoJuego {
+public class Conecta4 extends InfoJuego {
     private final Tablero tablero;
 
-    public TresEnRaya() {
-        this.tablero = new Tablero(TipoJuego.TRES_EN_RAYA.getFilas(),
-                                   TipoJuego.TRES_EN_RAYA.getColumnas());
+    public Conecta4() {
+        this.tablero = new Tablero(TipoJuego.CONECTA_4.getFilas(),
+                                   TipoJuego.CONECTA_4.getColumnas());
+    }
+    
+    public Conecta4(int filas, int columnas) {
+        this.tablero = new Tablero(filas,columnas);
     }
     
     public int getFilas() {
@@ -31,6 +35,6 @@ public class TresEnRaya extends InfoJuego {
 
     @Override
     public String toString() {
-        return "TresEnRaya{" + "tablero=" + tablero + '}';
+        return "Conecta4{" + "tablero=" + tablero + '}';
     }
 }

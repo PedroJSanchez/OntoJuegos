@@ -17,10 +17,10 @@ public class Tuberias extends InfoJuego {
     private final Tablero tablero;
 
     public Tuberias() {
-        this.tablero = new Tablero(TipoJuego.TUBERIAS.getDimension(),
-                TipoJuego.TUBERIAS.getDimension());
+        this.tablero = new Tablero(TipoJuego.TUBERIAS.getFilas(),
+                TipoJuego.TUBERIAS.getColumnas());
     }
-
+    
     public Tuberias(Tablero tablero) {
         this.tablero = tablero;
     }

@@ -22,15 +22,15 @@ public class Quatro extends InfoJuego {
     private final int numFichas;
 
     public Quatro() {
-        this.tablero = new Tablero(TipoJuego.QUATRO.getDimension(),
-                                   TipoJuego.QUATRO.getDimension());
+        this.tablero = new Tablero(TipoJuego.QUATRO.getFilas(),
+                                   TipoJuego.QUATRO.getColumnas());
         this.version = NORMAL;
         this.numFichas = QUATRO_NUM_FICHAS;
     }
     
     public Quatro(Version version) {
-        this.tablero = new Tablero(TipoJuego.QUATRO.getDimension(),
-                                   TipoJuego.QUATRO.getDimension());
+        this.tablero = new Tablero(TipoJuego.QUATRO.getFilas(),
+                                   TipoJuego.QUATRO.getColumnas());
         this.version = version;
         this.numFichas = QUATRO_NUM_FICHAS;
     }
